@@ -1,0 +1,361 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<main>
+    <div class="container single">
+            <div class="row one main-row">
+               <div class="col-12 col-sm-12 col-md-9 content-wrapper">
+                   <div class="social-desctop">
+                              <ul class="post-social">
+                                  <li>
+                                      <noindex>
+                                          {% if ( options.link_ba is not empty) %}
+                                               <a rel="nofollow" target="_blank" href="{{ options.link_ba }}">
+                                               {% else %}
+                                                <a rel="nofollow" target="_blank" href="#">
+                                               {% endif %}
+                                            
+                                              {% if ( options.icon_ba is not empty) %}
+                                               <img class="fa fa-bady" src="{{ options.icon_ba }}" alt="bady">
+                                              {% endif %}
+                                                </a>
+                                      </noindex>
+                                  </li>
+                                  <li>
+                                      <noindex>
+                                              {% if ( options.link_pi is not empty) %}
+                                                  <a rel="nofollow" target="_blank" href="{{ options.link_pi }}">
+                                              {% else %}
+                                           <a rel="nofollow" target="_blank" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" class="social-pt">
+                                             {% endif %}
+                                              {% if ( options.icon_pi is not empty) %}
+                                               <img class="fa fa-pineiterest" src="{{ options.icon_pi }}" alt="pineiterest"></a>
+                                              {% endif %}
+                                      </noindex>
+                                  </li>
+                                  <li>
+                                      <noindex>
+                                          {% if ( options.link_fa is not empty) %}
+                                                  <a rel="nofollow" target="_blank" href="{{ options.link_fa }}">
+                                              {% else %}
+                                          <a rel="nofollow" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>', 'facebook', 'width=1000, height=1024'); return false;" href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" title="Поделиться в Facebook" target="_blank">
+                                          {% endif %}
+                                          {% if ( options.icon_fa is not empty) %}
+                                                 <img class="fa fa-facebook" src="{{ options.icon_fa }}" alt="facebook">
+                                              {% endif %}
+                                     </a>
+                                      </noindex>
+                                  </li>
+                                  <li>
+                                      <noindex>
+                                          {% if ( options.link_tw is not empty) %}
+                                                  <a rel="nofollow" target="_blank" href="{{ options.link_tw }}">
+                                              {% else %}
+                                          <a onclick="window.open('http://twitter.com/home?status=Читаю <?php the_permalink(); ?>: <?php the_title(); ?>', 'twitter', 'width=1000, height=1024'); return false;" href="http://twitter.com/home?status=Читаю <?php the_permalink(); ?>: <?php the_title(); ?>" title="Добавить в Twitter" target="_blank" rel="nofollow" >
+                                          {% endif %}
+                                      {% if ( options.icon_tw is not empty) %}
+                                                     <img class="fa fa-twitter" src="{{ options.icon_tw }}" alt="twitter">          
+                                                     {% endif %}
+                                             </a>                 
+                                      </noindex>
+                                  </li>
+                              </ul>
+                          </div>
+                    {% if ( function('is_single') ) %} 
+                        <h2 class="page-title">{{ post.title }}</h2>
+                    {% endif %}
+                    <div class="breadcrumbs">
+                        {{ function('the_breadcrumb') }}
+                    </div>
+                           {% if ( post.meta('sale_image') is not empty) %}
+                            <img src="{{ Image(post.meta('sale_image')).src }}" alt="{{ Image(post.meta('hero_image')).alt }}" class="img-full">
+                           {% else %}
+                                <img width="{{post.thumbnail.width}}" height="{{post.thumbnail.height}}" src="{{post.thumbnail('sale-full')}}" class="{{post.thumbnail.class}} wp-post-image" alt="{{post.thumbnail.alt}}">
+                          {% endif %}
+                          <img src="{{ theme.link }}/images/major-sec-min.png" alt="best price" class="major-sec">
+                          <div class="social-mobile">
+                              <ul class="post-social">
+                                  <li>
+                                      <noindex>
+                                              {% if ( options.link_ba is not empty) %}
+                                               <a rel="nofollow" target="_blank" href="{{ options.link_ba }}">
+                                               {% else %}
+                                                <a rel="nofollow" target="_blank" href="#">
+                                               {% endif %}
+                                               {% if ( options.icon_ba is not empty) %}
+                                               <img class="fa fa-bady" src="{{ options.icon_ba }}" alt="bady">
+                                               {% endif %}
+                                                </a>
+                                      </noindex>
+                                  </li>
+                                  <li>
+                                      <noindex>
+                                          {% if ( options.link_pi is not empty) %}
+                                                  <a rel="nofollow" target="_blank" href="{{ options.link_pi }}">
+                                              {% else %}
+                                           <a rel="nofollow" target="_blank" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" class="social-pt">
+                                             {% endif %}
+                                              {% if ( options.icon_pi is not empty) %}
+                                               <img class="fa fa-pineiterest" src="{{ options.icon_pi }}" alt="pineiterest"></a>
+                                              {% endif %}
+                                      </noindex>
+                                  </li>
+                                  <li>
+                                      <noindex>
+                                          {% if ( options.link_fa is not empty) %}
+                                                  <a rel="nofollow" target="_blank" href="{{ options.link_fa }}">
+                                              {% else %}
+                                          <a rel="nofollow" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>', 'facebook', 'width=1000, height=1024'); return false;" href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" title="Поделиться в Facebook" target="_blank">
+                                          {% endif %}
+                                          {% if ( options.icon_fa is not empty) %}
+                                                 <img class="fa fa-facebook" src="{{ options.icon_fa }}" alt="facebook">
+                                              {% endif %}
+                                     </a>
+                                      </noindex>
+                                  </li>
+                                  <li>
+                                      <noindex>
+                                          {% if ( options.link_tw is not empty) %}
+                                                  <a rel="nofollow" target="_blank" href="{{ options.link_tw }}">
+                                              {% else %}
+                                          <a onclick="window.open('http://twitter.com/home?status=Читаю <?php the_permalink(); ?>: <?php the_title(); ?>', 'twitter', 'width=1000, height=1024'); return false;" href="http://twitter.com/home?status=Читаю <?php the_permalink(); ?>: <?php the_title(); ?>" title="Добавить в Twitter" target="_blank" rel="nofollow" >
+                                          {% endif %}
+                                          {% if ( options.icon_tw is not empty) %}
+                                                     <img class="fa fa-twitter" src="{{ options.icon_tw }}" alt="twitter">          
+                                                     {% endif %}
+                                             </a>                 
+                                      </noindex>
+                                  </li>
+                              </ul>
+                          </div>
+ 
+                  {% if ( post.meta('sale_content') is not empty) %} 
+                   <div class="row content-row">
+                     {% set count = 1 %} 
+                        {% for media_item in post.meta('sale_content') %}
+                            {% if media_item.acf_fc_layout == 'punct_cycle' %}
+                             <div class="col-sm-12">
+                                 <p class="section-name">
+                                     <span class="number">
+                                             {% set count = count + 1 %}
+                                             {{count}}
+                                     </span>
+                                     <span id="section-header-{% set count = count + 1 %}{{count}}" class="name">
+                                         {{ media_item.section_name }}
+                                     </span>
+                                 </p>
+                                 {% if ( media_item.puncts is not empty) %} 
+                                 <ul class="puncts">
+                                        {% for item in media_item.puncts %}
+                                         <li>
+                                             {{ item.one_punct }}
+                                         </li>
+                                     {% endfor %}
+                                 </ul>
+                                 {% endif %}
+                             </div>
+                         {% endif %}
+  
+                         {% if media_item.acf_fc_layout == 'image' %}
+                             <div class="col-sm-12">
+                                {% if ( media_item.image_in is not empty ) %}
+                                 <img src="{{ media_item.image_in.url }}" alt="{{ media_item.image_in.alt }}" width="{{ media_item.image_in.width }}" height="{{ media_item.image_in.height }}" class="img-full">
+                                {% endif %}
+                                
+                             </div>
+                         {% endif %}
+
+                            {% if media_item.acf_fc_layout == 'text' %}
+                             <div class="col-sm-12">
+                                 <p class="section-name">
+                                     <span class="number">
+                                          {% set count = count + 1 %}
+                                          {{count}}
+                                     </span>
+                                     <span id="section-header-{% set count = count + 1 %}{{count}}" class="name">
+                                         {{ media_item.section_name_text }}
+                                     </span>
+                                 </p>
+                                 <div class="section-text">
+                                     {{ media_item.section_text }}
+                                 </div>
+                             </div>
+                           {% endif %}
+                       
+                            {% if media_item.acf_fc_layout == 'doctor_review' %}
+                             <div class="col-sm-12 white-block">
+                                 {% if ( media_item.pfoto is not empty ) %}
+                                     <img src="{{ media_item.pfoto.url | resize(120, 120) }}" alt="{{ media_item.pfoto.alt }}"  class="doc-face">
+                                 {% endif %}
+                                 <p class="doc-name">
+                                     {{ media_item.name }}
+                                 </p>
+                                 <div class="rewiew">
+                                    <div class="rewiew-wrapper">
+                                     {{ media_item.rewiew }}
+                                    </div>
+                                 </div>
+                             </div>
+                         {% endif %}
+                         
+                            {% if media_item.acf_fc_layout == 'client_review' %}
+                             <div class="col-sm-12 white-block client-block">
+                                 <div class="rewiew client">
+                                     <div class="rewiew-wrapper client">
+                                         {{ media_item.rewiew_client }}
+                                     </div> 
+                                 </div>
+                                 <div class="wrapper">
+                                     {% if ( media_item.pfoto_client is not empty ) %}
+                                         <img src="{{ media_item.pfoto_client.url | resize(120, 120) }}" alt="{{ media_item.pfoto_client.alt }}">
+                                     {% endif %}
+                                     <p class="doc-name client-name">
+                                         {{ media_item.name_client }}
+                                     </p>
+                                 </div>
+                             </div>
+                         {% endif %}
+                         
+                            {% if media_item.acf_fc_layout == 'score' %}
+                             <div class="col-sm-12 white-block">
+                                 <div class="row">
+                                     <div class="top-wrapper">
+                                         <span class="mark">
+                                             {{ media_item.mark }}
+                                             <mark>
+                                                 Total score
+                                             </mark>
+                                         </span>
+                                         <div class="score-header">
+                                             {{ media_item.section_name_score }}
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-1"></div>
+                                     <div class="score-text col-sm-10">
+                                         {{ media_item.section_text_score }}
+                                     </div>
+                                     <div class="col-sm-1"></div>
+                                 </div>
+                                 {% if ( media_item.scores_cycle is not empty) %} 
+                                 <div class="row">
+                                     <div class="col-sm-1"></div>
+                                     <div class="progress-wrapper col-sm-10">
+                                         {% set count = 1 %}
+                                         <?php 
+                                         $array_length = get_field('scores_cycle');
+                                         $len = count($array_length); ?>
+                                        {% for item in media_item.scores_cycle %}
+                                         <div class="left">
+                                             {{ item.score_name }}
+                                         </div>
+                                         <div class="right">
+                                             {{ item.score_mark }}
+                                         </div>
+                                         <div class="progress">
+                                              <div class="progress-bar bar-{{ count }}" role="progressbar" aria-valuenow="{{ item.score_mark }}"
+                                              aria-valuemin="0" aria-valuemax="10" style="width:0">
+                                              <span class="sr-only barl-{{ count }}">
+                                                  {{ item.score_mark }}
+                                              </span>
+                                              </div>
+                                            </div>
+                                            {% set count = count + 1 %}
+                                            {% endfor %}
+                                     </div>
+                                     <div class="col-sm-1"></div>
+                                 </div>
+                                 {% endif %}
+                             </div>
+                         {% endif %}
+                         
+                                    {% if media_item.acf_fc_layout == 'button_section' %}
+                                     <div class="col-sm-12 white-block button-block">
+                                        <div class="row">
+                                             <div class="col-sm-3">
+                                         {% if ( media_item.product_image is not empty) %} 
+                                             <img src="{{ media_item.product_image.url  }}" alt="{{ media_item.product_image.alt }}" width="{{ media_item.product_image.width }}" height="{{ media_item.product_image.height }}">
+                                         {% endif %}
+                                         </div>
+                                         <div class="col-sm-5 button-insert-wrapper">
+                                             <div class="product-name">
+                                                 {{ media_item.product_name }}
+                                             </div>
+                                         </div>
+                                         {% if ( media_item.text_for_product_button is not empty) %} 
+                                         <div class="col-sm-4 button-insert-wrapper">
+                                             <a {% if ( media_item.link_for_product_button is not empty) %}
+                                                href="{{ media_item.link_for_product_button }}"
+                                                {% else %}
+                                                href="#"
+                                                {% endif %} class="product-button">
+                                                 {{ media_item.text_for_product_button }}
+                                             </a>
+                                         </div>
+                                         {% endif %}
+                                        </div>
+                                     </div>
+                                 {% endif %}
+                    
+                                    {% if media_item.acf_fc_layout == 'text_menu' %}
+                                     <div class="col-sm-12">
+                                         <div class="text-wrapper section-text">
+                                             <div class="col-sm-5 white-block menu-block">
+                                                 <div class="menu-name">
+                                                     {{ media_item.menu_name }}
+                                                 </div>
+                                                 <nav>
+                                                     <ul id="menu">
+<!--                                                         menu-->
+                                                     </ul>
+                                                 </nav>
+                                             </div>
+                                             <p class="section-name">
+                                                <span class="number">
+                                                     {% set count = count + 1 %}
+                                                     {{count}}
+                                                </span>
+                                                <span id="section-header-{% set count = count + 1 %}{{ count }}>" class="name">
+                                                    {{ media_item.section_name }}
+                                                </span>
+                                             </p>
+                                             {{ media_item.text_part }}
+                                         </div>
+                                     </div>
+                                 {% endif %}
+                                 
+                     {% endfor %}
+                    </div>
+                {% endif %}
+                   <div class="row content-row related">
+                           <div class="col-sm-12 title">
+                               Related articles
+                           </div>
+                            {% for item in posts %}
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 sale-wrapper d-flex">
+                                    <div class="sale-main">
+                                     <div class="sale-image">
+                                    {% if (post.thumbnail is not empty) %}
+                                     <img width="{{post.thumbnail.width}}" height="{{post.thumbnail.height}}" src="{{post.thumbnail('sale')}}" class="{{post.thumbnail.class}} wp-post-image" alt="{{post.thumbnail.alt}}" style="height: 100%">
+                                    {% endif %}
+                                     </div>
+                                    <div class="sale-content d-flex col-12">
+                                         <p class="sale-header col-12">
+                                             {{ item.title }}
+                                         </p>
+                                         <a href="{{ item.link }}" class="more-link" style="display:none;">
+                                             {{options.text_for_see_more}} &#8594;
+                                         </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            {% endfor %}
+                   </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 sidebar-wrapper">
+                    {{ sidebar }}
+                </div>
+            </div>
+    </div>
+</main>
+{{ footer }}
+{% endblock %}

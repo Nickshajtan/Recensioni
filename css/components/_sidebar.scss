@@ -1,0 +1,67 @@
+#sidebar{
+    background-image: url(../images/cat_bg-min.png);
+    width: 100%;
+    min-height: 670px;
+    height: auto;
+    background-size: 100% 100%;
+}
+.right-widget{
+    ul{
+        margin: 0;
+        margin-bottom: 25px;
+        padding: 0;
+        li{
+            list-style: none;
+            a, a:hover, a:focus, a:active{
+                font-family: $regular;
+                font-size:   $middle;
+                color: $black;
+                line-height: $middle-height;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+        }
+    }
+    .right-widget-title{
+        color: $black;
+        font-size: $bigger;
+        font-family: $bold;
+        text-transform: capitalize;
+        line-height: $middle-height;
+        margin-bottom: 10px;
+    }
+    img{
+        margin-top: 25px;
+        float: right;
+        max-width: 180px;
+        height: auto;
+        -o-object-fit: contain;
+           object-fit: contain;
+        width: 70%;
+    }
+}
+.red__line{
+    margin-top: 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid $red_t;
+    width: 28px;
+}
+@media screen and (max-width: 768px){
+    #sidebar{
+        min-height: 500px;
+        padding-top: 10px;
+    }
+    .right-widget-title{
+        font-size: ( $bigger + 6px );
+        
+    }
+    .right-widget ul li a{
+        font-size: ( $middle + 4px );
+    }
+}
+@media screen and (max-width: 768px) and (min-height: 1024px){
+    #sidebar{
+        min-height: 800px;
+    }
+}

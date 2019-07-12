@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+{% block content %}
+<main>
+    <div class="container">
+            <div class="row one main-row">
+               <div class="col-12 col-sm-12 col-md-9 content-wrapper">
+                                 {{options.text_for_404_page}}
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 sidebar-wrapper">
+                    {{ sidebar }}
+                </div>
+            </div>
+    </div>
+</main>
+{{ footer }}
+{% endblock %}

@@ -1,0 +1,74 @@
+body{
+    img{
+        max-width: 100%;
+        -o-object-fit: contain;
+           object-fit: contain;
+    }
+    background-color: $background;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    main{
+        min-height: calc(85vh - 200px);
+        .content-wrapper{
+            margin-bottom: 15px;
+        }
+    }
+}
+body *{
+    word-break: break-word;
+}
+.row.one{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.pagination-wrapper{
+    text-align: center;
+    margin: 20px 0 20px 0;
+    h2{
+        display: none;
+    }
+}
+.ias-trigger{
+    a{
+        background-color: $red_t;
+        color: $white;
+        text-decoration: none;
+        padding: 10px 30px 10px 30px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        font-family: $bold;
+        font-size: ( $middle - 2px );
+        text-transform: inherit;
+        &:hover, &:focus, &:active{
+            text-decoration: none;
+        }
+    }
+}
+.breadcrumbs{
+    margin-bottom: 30px;
+    font-family: $regular;
+    font-size: ($small + 3px);
+    color: $black;
+    a, a:hover, a:focus, a:active{
+        font-family: $regular;
+        font-size: ($small + 3px);
+        color: $black;
+        text-decoration: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .row.main-row{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .ias-trigger a{
+        font-size: ( $middle + 4px );
+    }
+    .breadcrumbs{
+        display: none;
+    }
+}

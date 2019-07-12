@@ -1,0 +1,67 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<main>
+    <div class="container">
+        {% if ( posts is not empty) %} 
+            <div class="row one main-row">
+               <div class="col-12 col-sm-12 col-md-9 content-wrapper">
+                   <div class="row content-row">
+                         {% for post in posts %}
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 sale-wrapper d-flex">
+                            <div class="sale-main">
+                             <div class="sale-image">
+                                 <div class="major">
+                                     <img src="{{theme.link}}/images/miglior-min.png" alt="best price">
+                                 </div>  
+                                   {% if (post.thumbnail is not empty) %}
+                                     <img width="{{post.thumbnail.width}}" height="{{post.thumbnail.height}}" src="{{post.thumbnail('sale')}}" class="{{post.thumbnail.class}} wp-post-image" alt="{{post.thumbnail.alt}}" style="height: 100%">
+                                    {% endif %}
+                             </div>
+                                 <div class="sale-content d-flex col-12">
+                                       <ul class="post-categories">
+                                       {% for cat in post.categories %}
+	                                        <li>
+                                                <a href="{{cat.link}}" rel="category tag">
+                                                    {{cat.name}}
+                                                </a>
+                                            </li>
+                                       {% endfor %}
+                                       </ul>
+                                 {% block headline %}
+                                 <p class="sale-header col-12">
+                                       {{ post.title }}
+                                 </p>
+                                 {% endblock %}
+                                 <a href="{{ post.link }}" class="more-link">
+                                    {{options.text_for_see_more}} &#8594;
+                                 </a>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="pagination-wrapper">
+                        {{ function('the_posts_pagination') }}
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 sidebar-wrapper">
+                    {{ sidebar }}
+                </div>
+            </div>
+            {% else %}
+            <div class="row">
+               <div class="col-12 col-sm-12 col-md-9 content-wrapper">
+                   <center>
+                       {{options.no_content_string}}
+                   </center>
+               </div>
+               <div class="col-12 col-sm-12 col-md-3 sidebar-wrapper">
+                    {{ sidebar }}
+               </div>
+            </div>
+        {% endif %}
+    </div>
+</main>
+{{footer}}
+{% endblock %}

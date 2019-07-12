@@ -1,0 +1,33 @@
+footer{
+    background-image: url(../images/footer-min.png);
+    background-size: 100% 100%;
+    float: left;
+    width:100%;
+    background-color: $bg;
+    min-height: 200px;
+    margin: 0;
+    padding: 0;
+}
+.footer-widget{
+    div{
+        p{
+            font-family: $regular;
+            color: $black;
+            font-size: $middle;
+            line-height: $middle-height;
+            padding-top: 32px;
+            text-align: right;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    footer{
+        background-size: cover;
+    }
+}
+@media screen and (min-height: 1366px){
+    footer{
+        background-size: cover;
+        min-height: 300px;
+    }
+}

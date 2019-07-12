@@ -1,0 +1,6 @@
+#*.txt
+#*.md
+*.png
+*.csv
+style/*.txt
+images/opt/

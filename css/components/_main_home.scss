@@ -1,0 +1,184 @@
+.sale-wrapper{
+    min-height: 300px;
+    height: auto;
+    background: $transparent;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    .sale-image{
+        height: 145px;
+        background-color: $grey;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    ul{
+        margin: 0;
+        margin-top: 15px;
+        padding: 0;
+        display: block;
+        li{
+            list-style: none;
+            background: $black;
+            float: left;
+            border-radius: 5px;
+            padding: 1px 5px 3px 5px;
+            margin-right: 5px;
+            a, a:hover, a:focus, a:active{
+                color: $white;
+                text-decoration: none;
+                font-family: $regular;
+                font-size: $small;
+                border-radius: 10px;
+                text-transform: inherit;
+            }
+        }
+    }
+    .sale-main{
+           border-radius: 5px;
+           &:hover, &:active, &:focus{
+            -webkit-box-shadow: 0 0  20px 10px $red;
+                    box-shadow: 0 0  20px 10px $red;
+            cursor: pointer;
+               .sale-content{
+                   border-bottom-right-radius: 5px;
+                   border-bottom-left-radius: 5px;
+                }
+               .sale-image{
+                   border-top-right-radius: 5px;
+                   border-top-left-radius: 5px;
+                   img.wp-post-image{
+                      border-top-right-radius: 5px;
+                      border-top-left-radius: 5px; 
+                   }
+               }
+                .sale-content .more-link{
+                   color: $red_s;
+                }
+        }
+    }
+}
+.sale-content{
+    background-color: $white;
+    width: 100%;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 20px 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 175px;
+    height: auto;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    .sale-header{
+        font-family: $regular;
+        color: $black;
+        font-size: $middle;
+        line-height: $middle-height;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-transform: inherit;
+        margin-bottom: 50px;
+    }
+    .more-link{
+        text-align: center;
+        text-decoration: none;
+        font-family: $regular;
+        color: $black;
+        text-transform: inherit;
+        padding-bottom: 25px;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        left: 0;
+        font-size: $middle;
+    }
+}
+.major{
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        img{
+            position: relative;
+            left: 6px;
+            top: 10px;
+			transform: scale(1.28);
+        }
+}
+.sale-image img.wp-post-image{
+                position: relative;
+                top: -22px;
+                left: 0;
+                z-index: 3;
+                display: block;
+                margin: auto; 
+                width: 100%;
+                max-width: 263px;
+                border-bottom: 1px solid $grey;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px; 
+}
+@media screen and (max-width: 768px){
+    .sale-wrapper{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .sale-content .sale-header{
+        font-size: ( $middle + 4px );  
+        margin-bottom: 60px;
+    }
+    .sale-wrapper ul li a, .sale-wrapper ul li a:hover, .sale-wrapper ul li a:focus, .sale-wrapper ul li a:active{
+        font-size: $middle;
+    }
+    .major img{
+        left: 10px;
+        -webkit-transform: scale(1.4);
+            -ms-transform: scale(1.4);
+                transform: scale(1.4);
+    }
+    .more-link{
+        font-size: ( $middle + 2px );
+    }
+}
+@media screen and (max-width: 768px) and (min-height: 1024px){
+    .content-wrapper{
+        width: 55%;
+    }
+    .sidebar-wrapper{
+        width: 45%;
+    }
+    .sale-wrapper{
+        width: 70%;
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .row.main-row{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    .row.content-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .ias-trigger{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+}

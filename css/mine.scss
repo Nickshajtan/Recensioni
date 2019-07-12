@@ -1,0 +1,21 @@
+//@import 'bootstrap/_variables.scss';
+//@import 'bootstrap/_mixins.scss';
+//@import 'bootstrap/_media.scss';
+//$container-max-widths: (
+//  sm: 576px,
+//  md: 720px,
+//  lg: 940px,
+//  xl: 1140px
+//);
+//@include _assert-ascending($container-max-widths, "$container-max-widths");
+//@import 'bootstrap/_grid.scss';
+@import 'bootstrap/bootstrap.min.css';
+@import 'bootstrap/bootstrap-theme.min.css';
+@import 'components/_variables.scss';
+@import 'components/_header.scss';
+@import 'components/_main.scss';
+@import 'components/_main_home.scss';
+@import 'components/_sidebar.scss';
+@import 'components/_footer.scss';
+@import 'components/_single.scss';
+

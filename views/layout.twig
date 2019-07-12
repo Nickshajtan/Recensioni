@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="{{ site.charset }}">
+  <meta name="description" content="{{ site.description }}">
+  <title>{{wp_title}}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,user-scalable=0">
+  <kk></kk>
+  {{wp_head}}
+</head>
+<body class="{{body_class}}">
+     <div class="global-wrapper">
+     {% block header %}
+      <header>
+          <div class="container">
+            <div class="row one header-row">
+                <div class="col-12 col-md-6 col-lg-3 name">
+                    {% if ( function('is_home') or function('is_front_page') ) %} 
+                            <h1 class="page-title">{{ site.name }}</h1>
+                    {% endif %}
+                    
+                    {% if ( function('is_404') ) %} 
+                        <h2 class="page-title">Error 404</h2>
+                    {% endif %}
+                    
+                    {% if ( function('is_category') ) %} 
+                        <h2 class="page-title">{{ function('single_cat_title') }}</h2>
+                    {% endif %}
+                    
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 empty-header"></div>
+                <div class="col-12 col-md-6 col-lg-3 empty-header"></div>
+                <div class="col-12 col-md-6 col-lg-3 logo-wrapper">
+                   {% if ( function('the_custom_logo') is not empty) %} 
+                     {{ function('the_custom_logo') }}
+                   {% endif %}
+                </div>
+            </div>
+        </div>
+      </header>
+      {% endblock %}
+    </div>
+{% block content %}
+{% endblock %}
+  {{ wp_footer }}
+        {% if (not function('is_single') ) %}
+        <script type="text/javascript">$(document).ready(function() { 
+            var ias = jQuery.ias( {
+              container: ".content-wrapper",
+              item: ".sale-wrapper",
+              pagination: ".page-numbers",
+              next: ".next.page-numbers",
+            } );
+
+            ias.extension( new IASTriggerExtension( { offset: 2 } ) );
+            ias.extension( new IASSpinnerExtension() );
+            ias.extension( new IASNoneLeftExtension() );
+        });</script> 
+        {% endif %}
+    </body>
+</html>
+
